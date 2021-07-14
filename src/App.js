@@ -1,58 +1,83 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+// import { useState, useEffect, useMemo } from 'react';
+// import { auth } from './firebase/firebase';
+// import Auth from './components/Auth';
+import {
+  PageSettings, PageEditLabels, PageEditTemplates, PageNewIssuetype
+} from './pages';
 
 function App() {
+  // const [user, loading, error] = useAuth(auth());
+  // const [isMounted, setIsMounted] = useState(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+    <div>
+      <PageSettings />
+      <PageEditTemplates />
+      <PageEditLabels />
+      <PageNewIssuetype />
     </div>
-  );
+  )
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function useAuth(auth) {
+//   const [user, setUser] = useState(undefined);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState(undefined);
+
+//   const handleUser = (value) => {
+//     setUser(value);
+//     setLoading(false);
+//   };
+
+//   const handleError = (error) => {
+//     setError(error);
+//     setLoading(false);
+//   }
+
+//   useEffect(() => {
+//     const listener = auth.onAuthStateChanged(handleUser, handleError);
+    
+//     return () => {
+//       listener();
+//     }
+//   }, [auth]);
+
+//   return useMemo(() => [user, loading, error], [user, loading, error]);
+// }
+
+// const Test = ({ user, loading, error }) => {
+//   if(loading) return <div>Loading...</div>
+//   if(error) return <div>Error...</div>
+
+//   return (
+//     <div>
+//       {user ?
+//         <div>
+//           <div>Logged in!</div>
+//           <div>
+//             <button onClick={() => auth().signOut()}>Sign Out</button>
+//           </div>
+//         </div>
+//       :
+//         <Auth />
+//       }
+//     </div>
+//   );
+// }
