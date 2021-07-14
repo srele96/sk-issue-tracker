@@ -1,1 +1,19 @@
-MAKE THOSE COMPONENTS FIRST WITH PROPS ONLY
+WHAT TO DISPLAY ON MAIN PAGE? - Only Description with link to create new
+    project that requires issues tracking
+WHAT TO DISPLAY ON USER PAGE? - Username, projects he is active in, 
+    his own repositories
+WHAT CAN SEE ONLY OWNER OF THE PROJECT? - Modifications (settings) (what else?) 
+WHAT CAN SEE UNAUTHENTICATED USER? - Just see displayed data
+
+-- ALWAYS DISPLAY TOP MENU
+-- SEARCH BAR ON TOP
+-- SEARCH (ISSUE | USER | ALL_OF_PROJECT_ISSUES)
+
+-- DISPLAYING ISSUE IS UNIQUE AND GOES BY USER
+-- user_unique_id / projects
+-- user_unique_id / project_unique_id / settings
+-- user_unique_id / project_unique_id / issues
+-- user_unique_id / project_unique_id / issue_unique_id
+
+TODO: Extract common components
+TODO: UPDATE FUNCTIONAL REQUIREMENTS IN SRS.TXT
