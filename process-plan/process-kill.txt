@@ -1,0 +1,6 @@
+netstat -ano | findstr :PORT.
+
+output: 
+proto, local addr, foreign addr, state, pid
+
+taskkill /F /PID `${PID}`
