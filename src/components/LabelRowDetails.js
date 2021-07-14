@@ -1,5 +1,6 @@
 import { Label } from './Label';
 
+
 export const LabelRowDetails = ({ labelText, labelDescription }) => (
   <div>
     <Label text={labelText}/>

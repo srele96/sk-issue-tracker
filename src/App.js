@@ -2,7 +2,13 @@
 // import { auth } from './firebase/firebase';
 // import Auth from './components/Auth';
 import {
-  PageSettings, PageEditLabels, PageEditTemplates, PageNewIssuetype
+  PageSettings,
+  PageEditLabels,
+  PageEditTemplates,
+  PageNewIssuetype,
+  PageCreateNewIssue,
+  PageViewIssues,
+  PageViewIssue
 } from './pages';
 
 function App() {
@@ -15,6 +21,9 @@ function App() {
       <PageEditTemplates />
       <PageEditLabels />
       <PageNewIssuetype />
+      <PageCreateNewIssue />
+      <PageViewIssues />
+      <PageViewIssue />
     </div>
   )
 }

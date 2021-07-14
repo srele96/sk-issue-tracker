@@ -1,6 +1,7 @@
 import { LabelEditor } from './LabelEditor';
 import { LabelRowDetails } from './LabelRowDetails';
 
+
 export const LabelRow = () => {
   const isEditorOpen = false;
 

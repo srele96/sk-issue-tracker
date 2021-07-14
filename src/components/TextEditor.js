@@ -22,7 +22,7 @@ export const TextEditor = () => {
           <button>Preview</button>
         </div>
         <div>
-          {isPreview ? <Write /> : <Preview />}
+          {isPreview ? <Preview /> : <Write />}
         </div>
       </div>
       <div>

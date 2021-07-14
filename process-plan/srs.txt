@@ -187,7 +187,6 @@ I'll be using this issue tracker to track my achievments and progress.
       * date/time opened
       * number of comments
       * issue aside
-      * participants
       * subscribe to notifications
       * [...comments] (first comment is regarding issue | suggestion | enhancement | ...)
       * [...(edited title | added label)]

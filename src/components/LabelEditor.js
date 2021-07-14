@@ -1,5 +1,6 @@
 import { Label } from './Label';
 
+
 export const LabelEditor = ({ submitText }) => (
   <div>
     <div>

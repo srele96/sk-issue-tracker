@@ -1,5 +1,6 @@
 import { Template } from '../components/Template';
 
+
 export const PageEditTemplates = () => (
   <div>
     <button>Save Changes</button>

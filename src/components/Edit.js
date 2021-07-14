@@ -1,4 +1,5 @@
-import { Dropdown } from './Dropdown';
+import { DropdownFilter } from './DropdownFilter';
+
 
 export const Edit = ({
   title,
@@ -33,14 +34,14 @@ export const Edit = ({
         </div>
         <div>
           {/* Open dropdown with search */}
-          <button>Labels</button>
-          <Dropdown />
+          <button>Assignees</button>
+          <DropdownFilter title="assignees" />
           <div>{assignees.map((a) => <span>{a}</span>)}</div>
         </div>
         <div>
           {/* Open dropdown with search */}
           <button>Labels</button>
-          <Dropdown />
+          <DropdownFilter title="labels" />
           <div>Labels: {labels.map((l) => <span>{l}</span>)}</div>
         </div>
       </div>

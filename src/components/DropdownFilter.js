@@ -1,4 +1,4 @@
-export const Dropdown = ({ title }) => (
+export const DropdownFilter = ({ title }) => (
   <div>
     <div>{title}</div>
     <div>

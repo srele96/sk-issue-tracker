@@ -1,6 +1,7 @@
 import { LabelEditor } from '../components/LabelEditor';
 import { LabelRow } from '../components/LabelRow';
 
+
 const PageEditLabels = () => (
   <div>
     <div>
