@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import { userStatusSelector } from './redux/slice';
 import { Header } from './components/Header';
 import { Public } from './components/Routes';
+import { Loading } from './components/Loading';
 import { auth, status } from './util';
 import { useAuth } from './hooks';
 import { routes } from './routes';
@@ -16,7 +17,7 @@ const App = () => {
   // This makes sure any component below is in sync.
   useAuth(auth);
 
-  if (userStatus === status.pending) return <div>Loading...</div>;
+  if (userStatus === status.pending) return <Loading />;
 
   return (
     <Router>

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { User } from './User';
 import { routes } from '../routes';
 import { RiMenuFill } from 'react-icons/ri';
 import { Sidebar } from './Sidebar';
@@ -55,6 +56,8 @@ export const Header = () => {
         <StyledNavMenu>
           <StyledLink to={routes.home}>Home</StyledLink>
         </StyledNavMenu>
+
+        <User />
 
         <StyledBackdrop ref={backdropRef} isVisible={isSidebarVisible} />
 

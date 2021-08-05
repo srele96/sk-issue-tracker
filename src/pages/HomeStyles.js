@@ -24,18 +24,21 @@ export const Wrap = styled.div`
 
 export const WrapLeft = styled.div`
   flex: 1;
-  max-width: 350px;
   padding: 0px 20px 20px 20px;
+  @media (min-width: 1000px) {
+    max-width: 360px;
+  }
 `;
 
 export const WrapRight = styled.div`
-  max-width: 700px;
-  flex: 2;
+  flex: 1;
   padding: 0px 20px 20px 20px;
   display: flex;
   flex-direction: column;
   @media (min-width: 1000px) {
+    max-width: 700px;
     flex-direction: row;
+    flex: 2;
     justify-content: space-evenly;
   }
 `;
