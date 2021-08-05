@@ -1,13 +1,16 @@
 import { useSelector } from 'react-redux';
-import { Auth } from './components/Auth';
-import { SignOut } from './components/SignOut';
-import { VisibleTo } from './components/VisibleTo';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { userStatusSelector } from './redux/slice';
+import { Header } from './components/Header';
+import { Public } from './components/Routes';
 import { auth, status } from './util';
 import { useAuth } from './hooks';
-import { userStatusSelector } from './redux/slice';
+import { routes } from './routes';
+import { Home } from './pages';
 
 const App = () => {
   const userStatus = useSelector(userStatusSelector);
+
   // Call useAuth in top level component to monitor
   // if user is signed in or signed out.
   // This makes sure any component below is in sync.
@@ -16,18 +19,13 @@ const App = () => {
   if (userStatus === status.pending) return <div>Loading...</div>;
 
   return (
-    <div>
-      {status === status.error && <div>Sign In failed. Try again.</div>}
+    <Router>
+      <Header />
 
-      <VisibleTo signedIn>
-        <div>Dashboard</div>
-        <SignOut auth={auth} />
-      </VisibleTo>
-
-      <VisibleTo signedOut>
-        <Auth />
-      </VisibleTo>
-    </div>
+      <Switch>
+        <Public path={routes.home} component={Home} />
+      </Switch>
+    </Router>
   );
 };
 
