@@ -56,6 +56,10 @@ export const StyledNavMenu = styled.ul`
   }
 `;
 
+export const StyledNavItem = styled.li`
+  display: flex;
+`;
+
 export const StyledLink = styled(Link)`
   border-radius: 6px;
   padding: 6px 16px;

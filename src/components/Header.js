@@ -8,6 +8,7 @@ import {
   StyledNav,
   StyledLogo,
   StyledNavMenu,
+  StyledNavItem,
   StyledLink,
   StyledButton,
   StyledBackdrop,
@@ -19,7 +20,7 @@ export const Header = () => {
 
   // Backdrop is only visible when sidebar is visible.
   // Therefore backdrop is only clickable when sidebar is visible.
-  const hideSidebar = (event) => {
+  const backdropHideSidebar = (event) => {
     if (event.target === backdropRef.current) {
       setIsSidebarVisible(false);
     }
@@ -35,14 +36,16 @@ export const Header = () => {
   }, [isSidebarVisible]);
 
   useEffect(() => {
-    window.addEventListener('click', hideSidebar);
+    window.addEventListener('click', backdropHideSidebar);
 
-    return () => window.removeEventListener('click', hideSidebar);
+    return () => window.removeEventListener('click', backdropHideSidebar);
   });
 
   const toggle = () => {
     setIsSidebarVisible((prevIsSidebarVisible) => !prevIsSidebarVisible);
   };
+
+  const linkHideSidebar = () => setIsSidebarVisible(false);
 
   return (
     <StyledHeader>
@@ -54,14 +57,22 @@ export const Header = () => {
         <StyledLogo to={routes.home}>SK - I - T</StyledLogo>
 
         <StyledNavMenu>
-          <StyledLink to={routes.home}>Home</StyledLink>
+          <StyledNavItem>
+            <StyledLink to={routes.home}>Home</StyledLink>
+          </StyledNavItem>
+          <StyledNavItem>
+            <StyledLink to={routes.users}>Users</StyledLink>
+          </StyledNavItem>
         </StyledNavMenu>
 
         <User />
 
         <StyledBackdrop ref={backdropRef} isVisible={isSidebarVisible} />
 
-        <Sidebar isVisible={isSidebarVisible} />
+        <Sidebar
+          linkHideSidebar={linkHideSidebar}
+          isVisible={isSidebarVisible}
+        />
       </StyledNav>
     </StyledHeader>
   );

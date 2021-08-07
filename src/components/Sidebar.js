@@ -11,18 +11,27 @@ import {
   StyledMenuLink,
 } from './SidebarStyles';
 
-const Sidebar = ({ isVisible }) => {
+const Sidebar = ({ linkHideSidebar, isVisible }) => {
   return (
     <StyledSidebar isVisible={isVisible}>
       <StyledSidebarBrand>
-        <StyledLogo to={routes.home}>SK - I - T</StyledLogo>
+        <StyledLogo onClick={linkHideSidebar} to={routes.home}>
+          SK - I - T
+        </StyledLogo>
       </StyledSidebarBrand>
 
       <StyledSidebarItems>
         <StyledSidebarNav>
           <StyledMenuList>
             <StyledMenuItem>
-              <StyledMenuLink to={routes.home}>Home</StyledMenuLink>
+              <StyledMenuLink onClick={linkHideSidebar} to={routes.home}>
+                Home
+              </StyledMenuLink>
+            </StyledMenuItem>
+            <StyledMenuItem>
+              <StyledMenuLink onClick={linkHideSidebar} to={routes.users}>
+                Users
+              </StyledMenuLink>
             </StyledMenuItem>
           </StyledMenuList>
         </StyledSidebarNav>
@@ -32,6 +41,7 @@ const Sidebar = ({ isVisible }) => {
 };
 
 Sidebar.propTypes = {
+  linkHideSidebar: PropTypes.func.isRequired,
   isVisible: PropTypes.bool.isRequired,
 };
 

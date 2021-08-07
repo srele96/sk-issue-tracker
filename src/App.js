@@ -2,12 +2,12 @@ import { useSelector } from 'react-redux';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import { userStatusSelector } from './redux/slice';
 import { Header } from './components/Header';
-import { Public } from './components/Routes';
+import { Public } from './components/RouteComponents';
 import { Loading } from './components/Loading';
 import { auth, status } from './util';
 import { useAuth } from './hooks';
 import { routes } from './routes';
-import { Home } from './pages';
+import { Home, Users } from './pages';
 
 const App = () => {
   const userStatus = useSelector(userStatusSelector);
@@ -24,7 +24,8 @@ const App = () => {
       <Header />
 
       <Switch>
-        <Public path={routes.home} component={Home} />
+        <Public path={routes.users} component={Users} />
+        <Public exact path={routes.home} component={Home} />
       </Switch>
     </Router>
   );

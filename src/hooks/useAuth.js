@@ -2,6 +2,8 @@ import { useEffect, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { status } from '../util';
 import { setUser, setUserStatus } from '../redux/slice';
+import { UserModel, Collections } from '../models';
+import { firestore } from '../util';
 
 // Wraps around auth().onAuthStateChanged and keeps user in
 // redux store updated if user is signed in or signed out.
@@ -10,7 +12,18 @@ export const useAuth = (auth) => {
 
   const authStateChange = useCallback(
     (user) => {
-      dispatch(setUser(user?.toJSON()));
+      dispatch(setUserStatus(status.pending));
+
+      if (user) {
+        const userData = UserModel(user.uid, user.displayName);
+
+        firestore()
+          .collection(Collections.Users)
+          .doc(userData.user_id)
+          .set(userData, { merge: true });
+      }
+
+      dispatch(setUser(user ? user.toJSON() : null));
       dispatch(setUserStatus(status.complete));
     },
     [dispatch]
@@ -18,6 +31,7 @@ export const useAuth = (auth) => {
 
   const authError = useCallback(
     (error) => {
+      dispatch(setUserStatus(status.pending));
       dispatch(setUserStatus(status.error));
     },
     [dispatch]
