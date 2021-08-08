@@ -1,3 +1,4 @@
+import { Main } from '../components/Main';
 import {
   StyledH1,
   Wrap,
@@ -7,11 +8,11 @@ import {
   StypedP,
   CreateProject,
   BrowseProjects,
-} from './HomeStyles';
+} from './Home-Styles';
 
 export const Home = () => {
   return (
-    <main>
+    <Main>
       <Wrap>
         <WrapLeft>
           <StyledH1>
@@ -38,6 +39,6 @@ export const Home = () => {
           </Row>
         </WrapRight>
       </Wrap>
-    </main>
+    </Main>
   );
 };

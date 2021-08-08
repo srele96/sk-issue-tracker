@@ -1,47 +1,44 @@
 import { useState, useEffect } from 'react';
 import { firestore, status } from '../util';
 
-export const useCollectionOnce = (collection, limit = 25) => {
-  const [data, setData] = useState([]);
+export const useDocumentOnce = (collection, user_id) => {
+  const [data, setData] = useState(null);
   const [loadingStatus, setLoadingStatus] = useState(status.idle);
   const [error, setError] = useState(null);
 
-  // Trigger collection fetch.
+  // Enable condition to get document from firestore collection.
   useEffect(() => {
     setLoadingStatus(status.pending);
   }, []);
 
-  // If status is pending, get data from collection.
+  // Get one document from collection.
   useEffect(() => {
     let isMounted = true;
 
     if (loadingStatus === status.pending) {
+      if (isMounted) setLoadingStatus(status.pending);
+
       firestore()
         .collection(collection)
-        .limit(limit)
+        .doc(user_id)
         .get()
-        .then((querySnapshot) => {
+        .then((doc) => {
           if (isMounted) {
-            // Collect data before calling setState. Reduce ammount of renders.
-            let userList = [];
-            querySnapshot.forEach(
-              (doc) => (userList = [...userList, doc.data()])
-            );
+            if (doc.exists) setData(doc.data());
 
-            setData(userList);
             setLoadingStatus(status.complete);
           }
         })
         .catch((error) => {
           if (isMounted) {
-            setLoadingStatus(status.error);
             setError(error);
+            setLoadingStatus(status.error);
           }
         });
     }
 
     return () => (isMounted = false);
-  }, [loadingStatus, collection, limit]);
+  }, [loadingStatus, user_id, collection]);
 
   return [data, loadingStatus, error];
 };

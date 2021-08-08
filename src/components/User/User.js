@@ -12,7 +12,7 @@ import {
   DropdownWrap,
   DropdownContent,
   Close,
-} from './UserStyles';
+} from './User-Styles';
 
 export const User = () => {
   const ButtonRef = useRef();

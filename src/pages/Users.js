@@ -2,6 +2,7 @@ import { BsArrowRightShort } from 'react-icons/bs';
 import { status } from '../util';
 import { Collections } from '../models';
 import { useCollectionOnce } from '../hooks';
+import { Main } from '../components/Main';
 import {
   UsersContainer,
   Bordered,
@@ -10,7 +11,7 @@ import {
   UserItem,
   Message,
   UserLink,
-} from './UsersStyles';
+} from './Users-Styles';
 
 export const Users = () => {
   const [users, usersStatus] = useCollectionOnce(Collections.Users);
@@ -41,13 +42,13 @@ export const Users = () => {
   };
 
   return (
-    <main>
+    <Main>
       <UsersContainer>
         <Bordered>
           <H1>User list</H1>
           <UserList>{renderUsers()}</UserList>
         </Bordered>
       </UsersContainer>
-    </main>
+    </Main>
   );
 };

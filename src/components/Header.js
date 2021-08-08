@@ -12,7 +12,7 @@ import {
   StyledLink,
   StyledButton,
   StyledBackdrop,
-} from './HeaderStyles';
+} from './Header-Styles';
 
 export const Header = () => {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);

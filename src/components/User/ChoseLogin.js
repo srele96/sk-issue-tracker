@@ -1,4 +1,4 @@
-import { H4 } from './ChoseLoginStyles';
+import { H4 } from './ChoseLogin-Styles';
 import { Auth } from './Auth';
 
 export const ChoseLogin = () => (

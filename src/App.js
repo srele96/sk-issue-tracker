@@ -7,7 +7,7 @@ import { Loading } from './components/Loading';
 import { auth, status } from './util';
 import { useAuth } from './hooks';
 import { routes } from './routes';
-import { Home, Users } from './pages';
+import { Home, Users, User } from './pages';
 
 const App = () => {
   const userStatus = useSelector(userStatusSelector);
@@ -24,6 +24,7 @@ const App = () => {
       <Header />
 
       <Switch>
+        <Public path={routes.user} component={User} />
         <Public path={routes.users} component={Users} />
         <Public exact path={routes.home} component={Home} />
       </Switch>

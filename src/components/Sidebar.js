@@ -9,7 +9,7 @@ import {
   StyledMenuList,
   StyledMenuItem,
   StyledMenuLink,
-} from './SidebarStyles';
+} from './Sidebar-Styles';
 
 const Sidebar = ({ linkHideSidebar, isVisible }) => {
   return (

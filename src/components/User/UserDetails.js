@@ -1,5 +1,5 @@
 import { SignOut } from './SignOut';
-import { H4 } from './UserDetailsStyles';
+import { H4 } from './UserDetails-Styles';
 
 export const UserDetail = ({ user }) => (
   <>
