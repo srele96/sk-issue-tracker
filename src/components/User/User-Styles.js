@@ -85,7 +85,6 @@ const DropdownContent = styled.div`
 const Close = styled(Button)`
   border: 1px solid var(--emphasized_teal);
   padding: 8px 16px;
-  margin-bottom: 8px;
 `;
 
 export {

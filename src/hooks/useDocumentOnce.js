@@ -9,7 +9,7 @@ export const useDocumentOnce = (collection, user_id) => {
   // Enable condition to get document from firestore collection.
   useEffect(() => {
     setLoadingStatus(status.pending);
-  }, []);
+  }, [collection, user_id]);
 
   // Get one document from collection.
   useEffect(() => {

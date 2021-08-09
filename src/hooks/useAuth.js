@@ -32,6 +32,7 @@ export const useAuth = (auth) => {
   const authError = useCallback(
     (error) => {
       dispatch(setUserStatus(status.pending));
+      dispatch(setUserStatus(status.pending));
       dispatch(setUserStatus(status.error));
     },
     [dispatch]

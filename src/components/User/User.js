@@ -19,6 +19,8 @@ export const User = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const user = useSelector(userSelector);
 
+  const closeDropdown = () => setIsDropdownOpen(false);
+
   return (
     <DropdownContainer>
       <Button ref={ButtonRef} onClick={() => setIsDropdownOpen(true)}>
@@ -32,7 +34,11 @@ export const User = () => {
             <DropdownContent>
               <Close onClick={() => setIsDropdownOpen(false)}>Close</Close>
 
-              {user ? <UserDetail user={user} /> : <ChoseLogin />}
+              {user ? (
+                <UserDetail closeDropdown={closeDropdown} user={user} />
+              ) : (
+                <ChoseLogin />
+              )}
             </DropdownContent>
           </DropdownWrap>
         </DropdownSlide>

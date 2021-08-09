@@ -1,14 +1,17 @@
 import { SignOut } from './SignOut';
-import { H4 } from './UserDetails-Styles';
+import { StyledLink } from './UserDetails-Styles';
+import { BsPlusCircle } from 'react-icons/bs';
+import { routes } from '../../routes';
 
-export const UserDetail = ({ user }) => (
+export const UserDetail = ({ user, closeDropdown }) => (
   <>
-    <H4>My Details</H4>
-    <div>
-      E-mail:
-      <br />
-      {user.email}
-    </div>
+    <StyledLink onClick={closeDropdown} to={`/users/${user.uid}`}>
+      Visit My Profile
+    </StyledLink>
+    <StyledLink onClick={closeDropdown} to={routes.createProject}>
+      <span>Create Project</span>
+      <BsPlusCircle />
+    </StyledLink>
     <SignOut />
   </>
 );

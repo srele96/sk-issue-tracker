@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const UserWrapper = styled.div`
   padding: 16px;
@@ -26,4 +27,23 @@ export const UserHeader = styled.div`
   text-align: center;
 `;
 
-export const UserProjects = styled.div``;
+export const UserProjects = styled.div`
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const CreateProject = styled(Link)`
+  margin-left: auto;
+  border-radius: 6px;
+  border: 1px solid var(--light_transparent);
+  max-width: max-content;
+  padding: 8px 16px;
+  color: var(--emphasized_teal);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  & svg {
+    margin-left: 6px;
+  }
+`;

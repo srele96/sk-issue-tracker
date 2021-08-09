@@ -1,7 +1,11 @@
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { Collections } from '../models';
 import { useDocumentOnce } from '../hooks';
 import { status } from '../util';
+import { userSelector } from '../redux/slice';
+import { routes } from '../routes';
+import { BsPlusCircle } from 'react-icons/bs';
 import { Main } from '../components/Main';
 import {
   UserWrapper,
@@ -10,6 +14,7 @@ import {
   Emp,
   UserHeader,
   UserProjects,
+  CreateProject,
 } from './User-Styles';
 
 const ProfileHeader = ({ children }) => (
@@ -19,6 +24,7 @@ const ProfileHeader = ({ children }) => (
 );
 
 export const User = () => {
+  const user = useSelector(userSelector);
   const { user_id } = useParams();
   const [data, loadingStatus] = useDocumentOnce(Collections.Users, user_id);
 
@@ -29,7 +35,14 @@ export const User = () => {
           <ProfileHeader>
             <Emp>{data.displayName}</Emp>'s Profile
           </ProfileHeader>
-          <UserProjects></UserProjects>
+          <UserProjects>
+            {user?.uid === data.user_id && (
+              <CreateProject to={routes.createProject}>
+                <span>Create Project</span>
+                <BsPlusCircle />
+              </CreateProject>
+            )}
+          </UserProjects>
         </>
       );
     }
