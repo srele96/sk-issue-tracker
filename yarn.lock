@@ -13411,6 +13411,16 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"react-firebase-hooks@npm:^3.0.4":
+  version: 3.0.4
+  resolution: "react-firebase-hooks@npm:3.0.4"
+  peerDependencies:
+    firebase: ">= 8.0.0"
+    react: ">= 16.8.0"
+  checksum: e1a1207062443cd60d0bf74651faea73a4680e91f01306f7be975cc029317daf85deeea07e85f486c9f6973085f7c6e5463300e4afa4305623d080b526c0388e
+  languageName: node
+  linkType: hard
+
 "react-firebaseui@npm:^5.0.2":
   version: 5.0.2
   resolution: "react-firebaseui@npm:5.0.2"
@@ -14688,6 +14698,7 @@ resolve@1.18.1:
     prop-types: ^15.7.2
     react: ^17.0.2
     react-dom: ^17.0.2
+    react-firebase-hooks: ^3.0.4
     react-firebaseui: ^5.0.2
     react-icons: ^4.2.0
     react-redux: ^7.2.3

@@ -7,6 +7,7 @@ import { userSelector } from '../redux/slice';
 import { routes } from '../routes';
 import { BsPlusCircle } from 'react-icons/bs';
 import { Main } from '../components/Main';
+import { ProjectList } from '../components/ProjectList';
 import {
   UserWrapper,
   UserContainer,
@@ -42,6 +43,8 @@ export const User = () => {
                 <BsPlusCircle />
               </CreateProject>
             )}
+
+            <ProjectList user={data} />
           </UserProjects>
         </>
       );

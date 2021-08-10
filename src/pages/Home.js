@@ -1,3 +1,4 @@
+import { routes } from '../routes';
 import { Main } from '../components/Main';
 import {
   StyledH1,
@@ -29,7 +30,9 @@ export const Home = () => {
             <StypedP>
               <span>Need Issue Tracker?</span>
             </StypedP>
-            <CreateProject>Create Project</CreateProject>
+            <CreateProject to={routes.createProject}>
+              Create Project
+            </CreateProject>
           </Row>
           <Row>
             <StypedP>

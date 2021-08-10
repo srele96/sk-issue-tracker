@@ -67,7 +67,7 @@ export const CreateProject = () => {
                   )}
                   <Field
                     as={InputTitle}
-                    placeholder="My awesome project..."
+                    placeholder="My awesome project title..."
                     type="text"
                     name="title"
                     id="title"

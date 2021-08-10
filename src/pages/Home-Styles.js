@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const StyledH1 = styled.h1`
   text-align: center;
@@ -59,7 +60,7 @@ export const StypedP = styled.p`
   text-align: center;
 `;
 
-const Button = styled.button`
+export const CreateProject = styled(Link)`
   margin-left: auto;
   margin-right: auto;
   margin-top: 8px;
@@ -70,9 +71,8 @@ const Button = styled.button`
   border-radius: 6px;
   padding: 8px 16px;
   cursor: pointer;
-`;
-
-export const CreateProject = styled(Button)`
+  text-align: center;
+  text-decoration: none;
   color: var(--emphasized_teal);
   background-color: var(--dark);
   border: 1px solid var(--emphasized_teal);
@@ -83,7 +83,17 @@ export const CreateProject = styled(Button)`
   }
 `;
 
-export const BrowseProjects = styled(Button)`
+export const BrowseProjects = styled.button`
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
+  display: block;
+  width: 200px;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
   color: var(--light);
   background-color: var(--dark);
   border: 1px solid var(--light);

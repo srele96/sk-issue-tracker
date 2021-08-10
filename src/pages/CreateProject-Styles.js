@@ -33,9 +33,9 @@ export const LabelTitle = styled.div`
 `;
 
 export const ErrorMessage = styled.div`
-  color: #f90404;
-  background-color: var(--light_transparent);
-  padding: 0px 16px 8px 16px;
+  color: var(--light);
+  background-color: #f90404;
+  padding: 8px 16px;
 `;
 
 export const InputTitle = styled.input`
