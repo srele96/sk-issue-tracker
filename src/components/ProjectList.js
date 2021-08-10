@@ -15,7 +15,11 @@ export const ProjectList = ({ user }) => {
       <List>
         {data.map((project) => (
           <ListItem key={project.project_id}>
-            <ListLink to="#">{project.title}</ListLink>
+            <ListLink
+              to={`/users/${project.user_id}/project/${project.project_id}`}
+            >
+              {project.title}
+            </ListLink>
           </ListItem>
         ))}
       </List>

@@ -7,7 +7,7 @@ import { Loading } from './components/Loading';
 import { auth, status } from './util';
 import { useAuth } from './hooks';
 import { routes } from './routes';
-import { Home, Users, User, CreateProject } from './pages';
+import { Home, Users, User, CreateProject, Project } from './pages';
 
 const App = () => {
   const userStatus = useSelector(userStatusSelector);
@@ -26,6 +26,7 @@ const App = () => {
       <Header />
 
       <Switch>
+        <Public path={routes.project} component={Project} />
         <Authenticated
           path={routes.createProject}
           redirectPath="/"
