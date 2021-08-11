@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import { firestore } from '../util';
 import { Collections } from '../models';
 import { Main } from '../components/Main';
+import { ProjectSubroutes } from './ProjectSubroutes';
 import { Container, Header, StyledLink, DivMessage } from './Project-Styles';
 
 export const Project = () => {
@@ -70,6 +71,8 @@ export const Project = () => {
             {project.title}
           </StyledLink>
         </Header>
+
+        <ProjectSubroutes project={project} />
       </Container>
     </Main>
   );
