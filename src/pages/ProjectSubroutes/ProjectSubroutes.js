@@ -31,16 +31,14 @@ const ProjectSubroutes = ({ project }) => {
 
       <Body>
         <Switch>
-          <Public>
-            <Route path={`${path}/issues`}>
-              <div>Issues</div>
-            </Route>
-            <Route path={`${path}/create-issue`}>
-              <div>Create Issue</div>
-            </Route>
-            <Route exact path={path}>
-              <Description project={project} />
-            </Route>
+          <Public path={`${path}/issues`}>
+            <div>Issues</div>
+          </Public>
+          <Public path={`${path}/create-issue`}>
+            <div>Create Issue</div>
+          </Public>
+          <Public exact path={path}>
+            <Description project={project} />
           </Public>
         </Switch>
       </Body>
