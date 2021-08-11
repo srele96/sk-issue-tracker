@@ -1,18 +1,24 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+export const Container = styled.div`
+  margin-top: 16px;
+  border-radius: 6px;
+  border: 1px solid var(--light_transparent);
+`;
+
 export const H2 = styled.h2`
   text-align: center;
   padding: 16px;
+  border-bottom: 1px solid var(--light_transparent);
 `;
 
 export const DivMessage = styled.div`
   text-align: center;
+  padding: 16px;
 `;
 
 export const List = styled.ul`
-  border-left: 1px solid var(--light_transparent);
-  border-right: 1px solid var(--light_transparent);
   list-style: none;
   display: flex;
   flex-direction: column;

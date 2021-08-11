@@ -1,7 +1,14 @@
 import { useCollectionDataOnce } from 'react-firebase-hooks/firestore';
 import { Collections } from '../models';
 import { firestore } from '../util';
-import { DivMessage, H2, List, ListItem, ListLink } from './ProjectList-Styles';
+import {
+  Container,
+  DivMessage,
+  H2,
+  List,
+  ListItem,
+  ListLink,
+} from './ProjectList-Styles';
 
 export const ProjectList = ({ user }) => {
   const query = firestore()
@@ -34,16 +41,21 @@ export const ProjectList = ({ user }) => {
     );
   };
 
-  if (error) return <div>Error! Couldn't get projects.</div>;
+  if (error)
+    return (
+      <DivMessage>
+        <h1>Error! Couldn't get projects.</h1>
+      </DivMessage>
+    );
 
   return (
-    <div>
+    <Container>
       <H2>{user.displayName}'s Projects</H2>
       {loading ? (
         <DivMessage>Loading...</DivMessage>
       ) : (
         <div>{renderProjects()}</div>
       )}
-    </div>
+    </Container>
   );
 };
