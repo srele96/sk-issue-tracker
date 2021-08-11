@@ -1,6 +1,7 @@
 import { Formik, Field } from 'formik';
 import { useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
+import { useHistory } from 'react-router';
 import { ProjectSchema, Collections } from '../models';
 import { userSelector } from '../redux/slice';
 import { Main } from '../components/Main';
@@ -20,6 +21,7 @@ import {
 } from './CreateProject-Styles';
 
 export const CreateProject = () => {
+  const history = useHistory();
   const user = useSelector(userSelector);
 
   return (
@@ -41,7 +43,9 @@ export const CreateProject = () => {
                 .doc(project.project_id)
                 .set(project, { merge: true })
                 .then(() => {
-                  // Add redirect to created project.
+                  history.push(
+                    `/users/${user.uid}/project/${project.project_id}`
+                  );
                 })
                 .catch(() => {
                   const errMessage = "Error! Couldn't create project!";
