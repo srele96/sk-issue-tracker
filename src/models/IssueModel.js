@@ -11,7 +11,7 @@ export const IssueSchema = yup.object().shape({
     .required('Title is required!'),
   description: yup
     .string()
-    .min(10, 'Title requires at least 10 characters!')
-    .max(200, 'Title may contain max 200 characters!')
-    .required('Title is required!'),
+    .min(10, 'Description requires at least 10 characters!')
+    .max(200, 'Description may contain max 200 characters!')
+    .required('Description is required!'),
 });
