@@ -16,6 +16,7 @@ const IssueComments = ({ issue_id }) => {
   const query = firestore()
     .collection(Collections.Comments)
     .where('issue_id', '==', issue_id)
+    .orderBy('created', 'asc')
     .limit(25);
   const [data, loading, error] = useCollectionData(query);
 

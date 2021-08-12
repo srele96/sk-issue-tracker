@@ -30,6 +30,7 @@ export const CommentEditor = ({ issue_id }) => {
       initialValues={getInitialState()}
       validationSchema={CommentSchema}
       onSubmit={(comment, actions) => {
+        comment.created = firestore.FieldValue.serverTimestamp();
         firestore()
           .collection(Collections.Comments)
           .doc(comment.comment_id)
