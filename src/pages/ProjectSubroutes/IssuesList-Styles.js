@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const DivMessage = styled.div`
-  padding: 0px 16px;
+  padding: 8px 16px;
 `;
 
 export const Container = styled.div`
