@@ -30,6 +30,7 @@ const CreateIssue = ({ project }) => {
           issue_id: nanoid(),
           project_id: project.project_id,
           user_id: user.uid,
+          isOpen: true,
           title: '',
           description: '',
         }}

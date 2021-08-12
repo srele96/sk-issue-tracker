@@ -3,6 +3,7 @@ import { Switch, useRouteMatch } from 'react-router-dom';
 import { Public, Authenticated } from '../../components/RouteComponents';
 import { Description } from './Description';
 import { CreateIssue } from './CreateIssue';
+import { Issues } from './Issues';
 import { useSelector } from 'react-redux';
 import { userSelector } from '../../redux/slice';
 import {
@@ -25,7 +26,7 @@ const ProjectSubroutes = ({ project }) => {
         </SubroutesNavItem>
 
         <SubroutesNavItem>
-          <SubroutesNavLink to={`${url}/issues`}>Issues</SubroutesNavLink>
+          <SubroutesNavLink to={`${url}/issues/open`}>Issues</SubroutesNavLink>
         </SubroutesNavItem>
 
         {user && (
@@ -40,7 +41,7 @@ const ProjectSubroutes = ({ project }) => {
       <Body>
         <Switch>
           <Public path={`${path}/issues`}>
-            <div>Issues</div>
+            <Issues project={project} />
           </Public>
 
           <Authenticated redirectPath={`${url}`} path={`${path}/create-issue`}>
