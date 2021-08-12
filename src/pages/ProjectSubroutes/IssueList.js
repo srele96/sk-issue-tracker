@@ -1,6 +1,6 @@
 import { useCollectionDataOnce } from 'react-firebase-hooks/firestore';
-import { Collections } from '../models';
-import { firestore } from '../util';
+import { Collections } from '../../models';
+import { firestore } from '../../util';
 import {
   DivMessage,
   Container,

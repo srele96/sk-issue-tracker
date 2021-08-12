@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import { useRouteMatch, Switch, useLocation } from 'react-router-dom';
 import { Public } from '../../components/RouteComponents';
-import { IssueList } from '../../components/IssueList';
+import { IssueList } from './IssueList';
+import { Issue } from './Issue';
 import { List, ListItem, ListLink } from './Issues-Styles';
 
 const Issues = ({ project }) => {
@@ -33,7 +34,7 @@ const Issues = ({ project }) => {
           </Public>
 
           <Public path={`${path}/:issue_id`}>
-            <div>Issue by issue id</div>
+            <Issue />
           </Public>
         </Switch>
       </div>
