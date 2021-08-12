@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
+import { CommentEditor } from '../../components/CommentEditor';
 import { useDocumentDataOnce } from 'react-firebase-hooks/firestore';
 import { Collections } from '../../models';
 import { firestore } from '../../util';
 
 const H1 = styled.h1`
+  color: var(--emphasized_teal);
   padding-bottom: 16px;
 `;
 
@@ -28,6 +30,9 @@ export const Issue = () => {
         <H1>{data.title}</H1>
       </div>
       <div>{data.description}</div>
+      <div>
+        <CommentEditor issue_id={issue_id} />
+      </div>
     </div>
   );
 };
