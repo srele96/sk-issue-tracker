@@ -45,7 +45,7 @@ const ProjectSubroutes = ({ project }) => {
           </Public>
 
           <Authenticated redirectPath={`${url}`} path={`${path}/create-issue`}>
-            <CreateIssue project={project} />
+            <CreateIssue url={url} project={project} />
           </Authenticated>
 
           <Public exact path={path}>

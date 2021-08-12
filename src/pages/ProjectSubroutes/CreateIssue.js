@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 import { nanoid } from '@reduxjs/toolkit';
 import { Formik, Field } from 'formik';
 import { firestore } from '../../util';
@@ -18,7 +19,8 @@ import {
   Button,
 } from './CreateIssue-Styles';
 
-const CreateIssue = ({ project }) => {
+const CreateIssue = ({ project, url }) => {
+  const history = useHistory();
   const user = useSelector(userSelector);
 
   return (
@@ -30,6 +32,7 @@ const CreateIssue = ({ project }) => {
           issue_id: nanoid(),
           project_id: project.project_id,
           user_id: user.uid,
+          displayName: user.displayName,
           isOpen: true,
           title: '',
           description: '',
@@ -41,7 +44,7 @@ const CreateIssue = ({ project }) => {
             .doc(issue.issue_id)
             .set(issue, { merge: true })
             .then(() => {
-              // redirect to created issue
+              history.push(`${url}/issues/${issue.issue_id}`);
             })
             .catch(() => {
               const errMessage = "Error! Couldn't create issue!";
@@ -92,6 +95,7 @@ const CreateIssue = ({ project }) => {
 
 CreateIssue.propTypes = {
   project: PropTypes.object.isRequired,
+  url: PropTypes.string.isRequired,
 };
 
 export { CreateIssue };

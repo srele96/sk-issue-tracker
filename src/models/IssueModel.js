@@ -4,6 +4,7 @@ export const IssueSchema = yup.object().shape({
   issue_id: yup.string().required('Issue ID is required!'),
   project_id: yup.string().required('Project ID is required!'),
   user_id: yup.string().required('User ID is required!'),
+  displayName: yup.string().required('User Display Name is required!'),
   isOpen: yup.bool().required(),
   title: yup
     .string()

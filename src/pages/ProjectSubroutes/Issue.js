@@ -1,16 +1,15 @@
-import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
+import { IssueComments } from '../../components/IssueComments';
 import { CommentEditor } from '../../components/CommentEditor';
 import { useDocumentDataOnce } from 'react-firebase-hooks/firestore';
 import { Collections } from '../../models';
 import { firestore } from '../../util';
-
-const H1 = styled.h1`
-  color: var(--emphasized_teal);
-  padding-bottom: 16px;
-`;
+import { useSelector } from 'react-redux';
+import { userSelector } from '../../redux/slice';
+import { H1, Card, CardHeader, CardBody, UserLink } from './Issue-Styles';
 
 export const Issue = () => {
+  const user = useSelector(userSelector);
   const { issue_id } = useParams();
   const query = firestore().collection(Collections.Issues).doc(issue_id);
   const [data, loading, error] = useDocumentDataOnce(query);
@@ -29,10 +28,25 @@ export const Issue = () => {
       <div>
         <H1>{data.title}</H1>
       </div>
-      <div>{data.description}</div>
+
+      <Card>
+        <CardHeader>
+          <UserLink to={`/users/${data.user_id}`}>{data.displayName}</UserLink>
+          <span>opened issue</span>
+        </CardHeader>
+
+        <CardBody>{data.description}</CardBody>
+      </Card>
+
       <div>
-        <CommentEditor issue_id={issue_id} />
+        <IssueComments issue_id={issue_id} />
       </div>
+
+      {user && (
+        <div>
+          <CommentEditor issue_id={issue_id} />
+        </div>
+      )}
     </div>
   );
 };
