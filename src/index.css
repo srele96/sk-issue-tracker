@@ -14,6 +14,8 @@
   --even_darker: #131313;
   --emphasized_teal_transparent: #00ffbf31;
   --emphasized_teal: #00ffbf;
+  --issue_open: #2da44e;
+  --issue_closed: #cf222e;
 }
 
 body,

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export const Message = styled.div``;
 
 export const Container = styled.div`
-  padding: 16px 0;
+  padding-top: 16px;
 `;
 
 export const List = styled.ul`

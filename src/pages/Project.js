@@ -16,7 +16,7 @@ export const Project = () => {
   const queryUser = firestore().collection(Collections.Users).doc(user_id);
   const [user, isUserLoading, userError] = useDocumentDataOnce(queryUser);
 
-  if (isProjectLoading || isUserLoading)
+  if (isProjectLoading || isUserLoading) {
     return (
       <Main>
         <Container>
@@ -24,7 +24,9 @@ export const Project = () => {
         </Container>
       </Main>
     );
-  if (userError || projectError)
+  }
+
+  if (userError || projectError) {
     return (
       <Main>
         <Container>
@@ -34,8 +36,10 @@ export const Project = () => {
         </Container>
       </Main>
     );
+  }
+
   // Incorrect user or project id will result in null result.
-  if (!user || !project)
+  if (!user || !project) {
     return (
       <Main>
         <Container>
@@ -45,8 +49,10 @@ export const Project = () => {
         </Container>
       </Main>
     );
+  }
+
   // Check if fetched user is who created project.
-  if (user.user_id !== project.user_id)
+  if (user.user_id !== project.user_id) {
     return (
       <Main>
         <Container>
@@ -56,6 +62,7 @@ export const Project = () => {
         </Container>
       </Main>
     );
+  }
 
   return (
     <Main>

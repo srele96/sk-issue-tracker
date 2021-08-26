@@ -34,7 +34,7 @@ const Issues = ({ project }) => {
           </Public>
 
           <Public path={`${path}/:issue_id`}>
-            <Issue />
+            <Issue projectOwnerId={project.user_id} />
           </Public>
         </Switch>
       </div>

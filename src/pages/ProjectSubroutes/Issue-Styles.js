@@ -6,6 +6,22 @@ export const H1 = styled.h1`
   padding-bottom: 16px;
 `;
 
+const IssueStatus = styled.div`
+  border-radius: 16px;
+  display: flex;
+  flex-direction: row;
+  max-width: max-content;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  background-color: ${({ isOpen }) =>
+    isOpen ? 'var(--issue_open)' : 'var(--issue_closed)'};
+  & svg {
+    margin-right: 4px;
+  }
+`;
+
 export const Card = styled.div`
   display: flex;
   flex-direction: column;
@@ -27,3 +43,5 @@ export const UserLink = styled(Link)`
   text-decoration: none;
   margin-right: 4px;
 `;
+
+export { IssueStatus };
