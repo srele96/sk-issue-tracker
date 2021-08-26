@@ -5,6 +5,7 @@ export const Container = styled.div`
   margin-top: 16px;
   border-radius: 6px;
   border: 1px solid var(--light_transparent);
+  overflow: hidden;
 `;
 
 export const H2 = styled.h2`
