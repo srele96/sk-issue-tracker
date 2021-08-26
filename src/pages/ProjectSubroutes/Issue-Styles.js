@@ -15,7 +15,7 @@ export const Card = styled.div`
 
 export const CardHeader = styled.div`
   padding: 8px;
-  background-color: var(--light_transparent);
+  border-bottom: 1px solid var(--light_transparent);
 `;
 
 export const CardBody = styled.div`

@@ -25,7 +25,7 @@ export const ListItem = styled.li`
 
 export const ListItemHeader = styled.span`
   padding: 8px;
-  background-color: var(--light_transparent);
+  border-bottom: 1px solid var(--light_transparent);
   display: flex;
 `;
 
