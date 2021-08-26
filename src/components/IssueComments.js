@@ -36,13 +36,15 @@ const IssueComments = ({ issue_id }) => {
 
   const render = () => {
     if (loading) return <Message>Loading...</Message>;
-    else if (error) {
+    if (error) {
+      console.log(error);
       return (
         <Message>
           <h1>Error! Couldn't get comments.</h1>
         </Message>
       );
-    } else if (data.length === 0) {
+    }
+    if (data.length === 0) {
       return <Message>No comments on this Issue.</Message>;
     }
 
