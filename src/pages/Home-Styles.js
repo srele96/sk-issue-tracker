@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const StyledH1 = styled.h1`
   text-align: center;
@@ -37,10 +36,7 @@ export const WrapRight = styled.div`
   display: flex;
   flex-direction: column;
   @media (min-width: 1000px) {
-    max-width: 700px;
-    flex-direction: row;
-    flex: 2;
-    justify-content: space-evenly;
+    max-width: 360px;
   }
 `;
 
@@ -58,48 +54,4 @@ export const Row = styled.div`
 export const StypedP = styled.p`
   font-size: 24px;
   text-align: center;
-`;
-
-export const CreateProject = styled(Link)`
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 8px;
-  display: block;
-  width: 200px;
-  font-weight: bold;
-  font-size: 16px;
-  border-radius: 6px;
-  padding: 8px 16px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  color: var(--emphasized_teal);
-  background-color: var(--dark);
-  border: 1px solid var(--emphasized_teal);
-  transition: 0.3s ease;
-  &:hover {
-    background-color: var(--emphasized_teal);
-    color: var(--dark);
-  }
-`;
-
-export const BrowseProjects = styled.button`
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 8px;
-  display: block;
-  width: 200px;
-  font-weight: bold;
-  font-size: 16px;
-  border-radius: 6px;
-  padding: 8px 16px;
-  cursor: pointer;
-  color: var(--light);
-  background-color: var(--dark);
-  border: 1px solid var(--light);
-  transition: 0.3s ease;
-  &:hover {
-    background-color: var(--light);
-    color: var(--dark);
-  }
 `;

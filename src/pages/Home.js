@@ -1,4 +1,3 @@
-import { routes } from '../routes';
 import { Main } from '../components/Main';
 import {
   StyledH1,
@@ -7,8 +6,6 @@ import {
   WrapRight,
   Row,
   StypedP,
-  CreateProject,
-  BrowseProjects,
 } from './Home-Styles';
 
 export const Home = () => {
@@ -28,17 +25,12 @@ export const Home = () => {
         <WrapRight>
           <Row>
             <StypedP>
-              <span>Need Issue Tracker?</span>
+              <span>Create Project and get issue reports from your users.</span>
             </StypedP>
-            <CreateProject to={routes.createProject}>
-              Create Project
-            </CreateProject>
-          </Row>
-          <Row>
+            <br />
             <StypedP>
-              <span>Looking to contribute?</span>
+              <span>Sign In to get started.</span>
             </StypedP>
-            <BrowseProjects>Browse Projects</BrowseProjects>
           </Row>
         </WrapRight>
       </Wrap>
