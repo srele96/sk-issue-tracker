@@ -1,0 +1,3 @@
+- Add rules for git flow
+  - Don't allow direct push to master
+  - Don't allow direct push to develop
