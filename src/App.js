@@ -12,6 +12,12 @@ import { Home, Users, User, CreateProject, Project } from './pages';
 const App = () => {
   const userStatus = useSelector(userStatusSelector);
 
+  /**
+   * TODO:
+   * - Do I even need custom hook if I use it on this one place?
+   * - Are custom hooks even useful if used only on one place? -> Probably not?
+   * - Think of moving useAuth code to App component, will make code more readable.
+   */
   // Call useAuth in top level component to monitor
   // if user is signed in or signed out.
   // This makes sure any component below is in sync.
